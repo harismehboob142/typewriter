@@ -1,0 +1,59 @@
+#typewriter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.text {
+    overflow: hidden;
+    /* Hide the text */
+    border-right: 0.15em solid black;
+    /* Add a border to the right of the text */
+    white-space: nowrap;
+    /* Keep the text on a single line */
+    margin: 0 auto;
+    /* Center the text */
+    letter-spacing: 0.15em;
+    /* Increase the spacing between letters */
+    animation:
+        typing 0.6s steps(10, end) forwards,
+        erase 0.5s steps(100, end) 2s forwards,
+        typing 0.5s steps(100, end) 3s forwards,
+        blink-caret 0.5s step-end infinite;
+}
+
+/* The animation for the typewriter effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 21%
+    }
+}
+
+/* The animation to erase the text */
+@keyframes erase {
+    from {
+        width: 21%
+    }
+
+    to {
+        width: 0
+    }
+}
+
+/* The animation for the cursor */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: black;
+    }
+}
